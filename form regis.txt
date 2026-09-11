@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Data Pribadi</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .form-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 { margin-bottom: 1.5rem; font-size: 1.5rem; text-align: center; }
+
+        .form-group { margin-bottom: 1.2rem; }
+
+        label { display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.9rem; }
+
+        input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover { background-color: #1d4ed8; }
+
+        @media (max-width: 480px) {
+            .form-container { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Isi Data Anda</h2>
+    <!-- Ganti 'URL_BACKEND_ANDA' nanti -->
+    <form action="URL_BACKEND_ANDA" method="POST">
+        <div class="form-group">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" name="Nama" placeholder="Contoh: Budi Santoso" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Alamat Email</label>
+            <input type="email" id="email" name="Email" placeholder="nama@email.com" required>
+        </div>
+
+        <div class="form-group">
+            <label for="telp">Nomor Telepon</label>
+            <input type="tel" id="telp" name="Telepon" pattern="[0-9]+" placeholder="Contoh: 08123456789" required title="Hanya angka yang diperbolehkan">
+        </div>
+
+        <button type="submit">Kirim Data</button>
+    </form>
+</div>
+
+</body>
+</html>
